@@ -6,7 +6,7 @@ This project aims to preprocess, annotate, validate the raw dataset collected fr
 * [Small-Scale Korean Corpus for Relation Extraction Task on Nature and Environments](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-03/blob/main/KOR_RE_DATASET_natures_environments.pdf)
 
 ### Simple code snippets to access the dataset
-* you need to install `datasets` beforehand.
+* you need to install `datasets` beforehand : `pip install datasets`
 
 ```python
 from datasets import load_dataset
@@ -26,7 +26,7 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 1. [Materials](#Materials)
 2. [Members](#Mebers)
 3. [Dataset Description](#Dataset-Description)
-4. [Baseline Tests](#Baseline-Tests)
+4. [IAA and Baseline Tests](#IAA-and-Basline-Tests)
 5. [Team Roles](#Team-Roles)
 6. [License](#License)
 
@@ -34,12 +34,10 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 
 본 프로젝트는 **관계 추출 테스크**에 적합한 데이터셋을 제작하는 것입니다. 더 나아가 데이터셋 제작에 활용될 수 있는 relation map과 가이드라인도 함께 작성하는 것을 목표로 합니다. 각 팀은 한국어 위키피디아에서 수집된 주제별 원시 데이터에서 **<주어, 관계, 목적어> Triplet 쌍을 라벨링**합니다. 이를 위해 **데이터셋 주제에 적합한 entity와 relation을 정의하고 라벨링**한 후, 팀 내부 교차 검증을 통해  Fleiss’ Kappa를 기준으로 **작업자간 일치도(IAA, Inter-Annotator Agreement)를 측정**합니다. 저희 팀의 주제는 🌳자연환경🌳으로 총 20개의 ‘주어:관계’를 설정했으며, 총 2,163개의 triplet을 생성하였습니다. 본 데이터는 100개의 triplet에 대해 교차 검증이 수행되었고  **Fleiss’ Kappa score 0.546로** Moderate agreement 정도의 신뢰도를 가지며, 본 데이터를 klue/roberta-large로 학습한 결과 f1 score 68.50의 베이스라인 성능을 얻었습니다.
 
-</br> 
-
 ## Materials 
-* wrap-up 레포트 [pdf](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-03/files/8643931/Wrap-up_report_final.pdf)
-* relation-map [바로가기](https://docs.google.com/spreadsheets/d/17lzIpxzaytewmbtLLcJBcCM_ZEjsk94Z/edit#gid=1043091473)
-* 가이드라인 [바로가기](https://docs.google.com/document/d/13bcznTy49ha5vyPQRZt0DeiG4yNcvXrf/edit#heading=h.gjdgxs)
+| Wrap-up Report                                                                                                             | Relation map                                                                                         | Guideline                                                                                          |
+|----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| [pdf](https://github.com/boostcampaitech3/level2-data-annotation_nlp-level2-nlp-03/files/8643931/Wrap-up_report_final.pdf) | [link](https://docs.google.com/spreadsheets/d/17lzIpxzaytewmbtLLcJBcCM_ZEjsk94Z/edit#gid=1043091473) | [link](https://docs.google.com/document/d/13bcznTy49ha5vyPQRZt0DeiG4yNcvXrf/edit#heading=h.gjdgxs) |
 
 </br> 
 
@@ -49,8 +47,6 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 <img src='https://user-images.githubusercontent.com/40655873/167225136-1ab5da36-0870-46e4-a76a-228bfc8b9ca7.jpeg' height=100 width=100px></img>|<img src='https://user-images.githubusercontent.com/40655873/167225145-f9216e6a-f24a-4026-a9c3-803c249067ad.jpeg' height=100 width=100px></img>|<img src='https://user-images.githubusercontent.com/40655873/167225149-b84d1df6-792b-4f8b-b1d0-b862a3b057e3.jpeg' height=100 width=100px></img>|<img src='https://user-images.githubusercontent.com/40655873/167225148-816da98f-0350-4a97-94bc-4237d086f096.jpeg' height=100 width=100px></img>|<img src='https://user-images.githubusercontent.com/40655873/167225148-816da98f-0350-4a97-94bc-4237d086f096.jpeg' height=100 width=100px></img>
 [SangRyul](https://github.com/SangRyul)|[kimcando](https://github.com/kimcando)|[xuio-0528](https://github.com/xuio-0528)|[maylilyo](https://github.com/maylilyo)|[sujeongim](https://github.com/sujeongim)
 
-</br> 
-
 ## Dataset Description
 
 ### 데이터셋 개요
@@ -58,7 +54,6 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 * ‘주어:관계’ : 20개
 
 <img width="828" alt="image" src="https://user-images.githubusercontent.com/40655873/167227365-a228eb1c-6210-4e27-bdd1-323e9d36e0fd.png">
-
 
 
 ### 엔티티 종류 
@@ -90,6 +85,7 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 | no_relation    | -                                 |
 
 
+## IAA and Basline Tests
 
 ### Inter-Annotator Agreement(IAA)
 * [Fleiss Kappa score](https://velog.io/@sujeongim/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%9C%EC%9E%91-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%92%88%EC%A7%88-%ED%8F%89%EA%B0%80-%EB%B0%A9%EB%B2%95-IAA-%ED%8F%89%EA%B0%80): 0.546 (Moderate agreement)
@@ -107,7 +103,7 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 
 
 
-### Team Roles
+## Team Roles
 | Member | Role | 
 | --- | --- |
 | 김상렬 | Tagtog 관리, annotation |
@@ -117,7 +113,7 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 | 임수정 | IAA 계산, annotation |
 
 
-### License
+## License
 
 ```자연환경``` 데이터셋은 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.ko) 라이선스 하에 공개되어 있습니다.
 
