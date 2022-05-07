@@ -15,8 +15,13 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 
 ```
 >>> dataset['train'][0]
-{'Unnamed: 0': 0, 'sentence': '흙 또는 토양(土壤)은 암석이나 동식물의 유해가 오랜 기간 침식과 풍화를 거쳐 생성된 땅을 구성하는 물질이다.', 'subject_entity': "{'word': '흙', 'start_idx': 0, 'end_idx': 0, 'type': 'RES'}", 'object_entity': "{'word': '토양', 'start_idx': 5, 'end_idx': 6, 'type': 'RES'}", 'label': 'res:alter_name', 'file_name': "('흙.txt', 'aJsku6MJ1m_p5ApaGJwqnBtchlVq-_.txt.ann.json')", 'sent_idx': 0, 'id': 0}
+{'Unnamed: 0': 0, 'sentence': '흙 또는 토양(土壤)은 암석이나 동식물의 유해가 오랜 기간 침식과 풍화를 거쳐 생성된 땅을 구성하는 물질이다.', 
+'subject_entity': "{'word': '흙', 'start_idx': 0, 'end_idx': 0, 'type': 'RES'}", 
+'object_entity': "{'word': '토양', 'start_idx': 5, 'end_idx': 6, 'type': 'RES'}", 
+'label': 'res:alter_name', 
+'file_name': "('흙.txt', 'aJsku6MJ1m_p5ApaGJwqnBtchlVq-_.txt.ann.json')", 'sent_idx': 0, 'id': 0}
 ```
+* You can ignore Unnamed, file_name, sent_idx, id attributes.
 
 
 </br>
