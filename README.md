@@ -13,6 +13,12 @@ from datasets import load_dataset
 dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 ```
 
+```
+>>> dataset['train'][0]
+{'Unnamed: 0': 0, 'sentence': '흙 또는 토양(土壤)은 암석이나 동식물의 유해가 오랜 기간 침식과 풍화를 거쳐 생성된 땅을 구성하는 물질이다.', 'subject_entity': "{'word': '흙', 'start_idx': 0, 'end_idx': 0, 'type': 'RES'}", 'object_entity': "{'word': '토양', 'start_idx': 5, 'end_idx': 6, 'type': 'RES'}", 'label': 'res:alter_name', 'file_name': "('흙.txt', 'aJsku6MJ1m_p5ApaGJwqnBtchlVq-_.txt.ann.json')", 'sent_idx': 0, 'id': 0}
+```
+
+
 </br>
 
 ---
@@ -52,9 +58,13 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 ### 데이터셋 개요
 * 총 데이터 개수 : 2,163개
 * ‘주어:관계’ : 20개
+* Field 설명: [huggingface Dataset card 참고](https://huggingface.co/datasets/kimcando/KOR-RE-natures-and-environments)
 
 <img width="828" alt="image" src="https://user-images.githubusercontent.com/40655873/167227365-a228eb1c-6210-4e27-bdd1-323e9d36e0fd.png">
 
+### 데이터셋 예시
+> 대멸종이 일어나면서 백악기와 중생대의 막을 내렸다. -> 백악기:subject & 대멸종: object & 관계: `DAT:influence `
+> 연약권에서는 지진파의 속도가 약간 감소하기 때문에 저속도층이라고 부른다. -> 저속도층: subject &연약권: object & 관계: `RES:alternate_name`
 
 ### 엔티티 종류 
 * 주어, 목적어 모두 가능(DAT, IDV, PHE, RES)
