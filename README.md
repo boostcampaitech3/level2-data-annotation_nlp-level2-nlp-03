@@ -1,4 +1,4 @@
-# Korean Data Construction for Relation Extraction Task on Natures and Environments
+# Korean Dataset Construction for Relation Extraction Task on Natures and Environments
 This work has done as the part of project in Naver BoostCamp AI Tech 3rd. 
 This project aims to preprocess, annotate, validate the raw dataset collected from korean wiki. Herein, we provide the raw data, annotated data via huggingface datasets library. Since only about two weeks are given to complete the overall process, the result may seem somehow sloppy. However, we provide **English version short technical paper** for those who consider to construct natural langue dataset but have no idead how to proceed. Eventhough our work primarily is about relation extraction task and some provided materials such as guidelines are written in Korean, we believe our trial and errors can help people avoid same troubles we have faced. 
 
@@ -28,7 +28,11 @@ dataset = load_dataset("kimcando/KOR-RE-natures-and-environments")
 
 ---
 
-# 한국어 Relation Extraction 테스크를 위한 자연환경 주제의 데이터셋 제작
+</br>
+
+# 한국어 Relation Extraction 테스크를 위한 데이터셋 제작 
+> 주제 : 자연환경
+> 
 > 네이버 부스트캠프 AI Tech 3기 NLP 3조(삼각김박임)
 
 
